@@ -98,5 +98,10 @@ require("packer").startup(function()
     'mfussenegger/nvim-dap-python',
     config = "require('dap-python').setup('~/.local/share/virtualenvs/debugpy/bin/python')"
   }
+  use {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = "require('dapui').setup()"
+  }
 end)
 vim.cmd 'colorscheme nord'
