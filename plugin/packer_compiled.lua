@@ -160,7 +160,7 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-vsnip", "nvim-autopairs", "vim-vsnip", "cmp-path", "cmp-buffer", "vim-vsnip-integ" },
+    after = { "cmp-vsnip", "nvim-autopairs", "vim-vsnip", "cmp-buffer", "cmp-path", "vim-vsnip-integ" },
     loaded = true,
     only_config = true
   },
@@ -331,6 +331,11 @@ _G.packer_plugins = {
     path = "/home/cunial/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/cunial/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-vsnip"] = {
     load_after = {},
     loaded = true,
@@ -365,10 +370,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for surround.nvim]], true)
 try_loadstring("\27LJ\2\2U\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\19mappings_style\rsandwich\nsetup\rsurround\frequire\0", "config", "surround.nvim")
 time([[Config for surround.nvim]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-require('dapui').setup()
-time([[Config for nvim-dap-ui]], false)
+-- Config for: nvim-dap-python
+time([[Config for nvim-dap-python]], true)
+require('dap-python').setup('~/.local/share/virtualenvs/debugpy/bin/python')
+time([[Config for nvim-dap-python]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\2*\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\15cmp-config\frequire\0", "config", "nvim-cmp")
@@ -385,14 +390,14 @@ time([[Config for trouble.nvim]], false)
 time([[Config for nvim-dap]], true)
 require('dap-config')
 time([[Config for nvim-dap]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+require('dapui').setup()
+time([[Config for nvim-dap-ui]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require'null-ls-config'
 time([[Config for null-ls.nvim]], false)
--- Config for: nvim-dap-python
-time([[Config for nvim-dap-python]], true)
-require('dap-python').setup('~/.local/share/virtualenvs/debugpy/bin/python')
-time([[Config for nvim-dap-python]], false)
 -- Config for: twilight.nvim
 time([[Config for twilight.nvim]], true)
 require('twilight-config')
@@ -423,8 +428,8 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CommentToggle lua require("packer.load")({'nvim-comment'}, { cmd = "CommentToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 

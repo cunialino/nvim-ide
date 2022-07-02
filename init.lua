@@ -103,5 +103,6 @@ require("packer").startup(function()
     requires = { "mfussenegger/nvim-dap" },
     config = "require('dapui').setup()"
   }
+  use { "tpope/vim-fugitive" }
 end)
 vim.cmd 'colorscheme nord'
