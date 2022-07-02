@@ -160,7 +160,7 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-vsnip", "nvim-autopairs", "cmp-buffer", "vim-vsnip", "cmp-path", "vim-vsnip-integ" },
+    after = { "cmp-vsnip", "nvim-autopairs", "vim-vsnip", "cmp-path", "cmp-buffer", "vim-vsnip-integ" },
     loaded = true,
     only_config = true
   },
@@ -180,6 +180,17 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/cunial/.local/share/nvim/site/pack/packer/opt/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/cunial/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    config = { "require('dap-python').setup('~/.local/share/virtualenvs/debugpy/bin/python')" },
+    loaded = true,
+    path = "/home/cunial/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -347,10 +358,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for surround.nvim]], true)
 try_loadstring("\27LJ\2\2U\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\19mappings_style\rsandwich\nsetup\rsurround\frequire\0", "config", "surround.nvim")
 time([[Config for surround.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require'trouble-config'
-time([[Config for trouble.nvim]], false)
+-- Config for: nvim-dap-python
+time([[Config for nvim-dap-python]], true)
+require('dap-python').setup('~/.local/share/virtualenvs/debugpy/bin/python')
+time([[Config for nvim-dap-python]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\2*\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\15cmp-config\frequire\0", "config", "nvim-cmp")
@@ -359,6 +370,18 @@ time([[Config for nvim-cmp]], false)
 time([[Config for which-key.nvim]], true)
 require'which-key-config'
 time([[Config for which-key.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require'trouble-config'
+time([[Config for trouble.nvim]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+require('twilight-config')
+time([[Config for twilight.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require("zen-mode-config")
+time([[Config for zen-mode.nvim]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require'null-ls-config'
@@ -367,14 +390,6 @@ time([[Config for null-ls.nvim]], false)
 time([[Config for nvim-toggleterm.lua]], true)
 require"toggleterm-config"
 time([[Config for nvim-toggleterm.lua]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require("zen-mode-config")
-time([[Config for zen-mode.nvim]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-require('twilight-config')
-time([[Config for twilight.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-lsp-installer ]]

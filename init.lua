@@ -93,5 +93,10 @@ require("packer").startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
     config = "require'trouble-config'"
   }
+  use { 'mfussenegger/nvim-dap', config = "require('dap-config')" }
+  use {
+    'mfussenegger/nvim-dap-python',
+    config = "require('dap-python').setup('~/.local/share/virtualenvs/debugpy/bin/python')"
+  }
 end)
 vim.cmd 'colorscheme nord'

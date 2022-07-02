@@ -7,12 +7,12 @@ lsp_installer.setup {}
 
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
-                                                                       .make_client_capabilities())
-  local opts = {capabilities = capabilities}
+    .make_client_capabilities())
+  local opts = { capabilities = capabilities }
   if ide_settings.language_servers[server.name] then
     opts = ide_settings.language_servers[server.name].config(opts)
   end
-  lspconfig[server.name].setup {opts}
+  lspconfig[server.name].setup { opts }
 end
 -- Diagnostics
 local signs = {
@@ -24,7 +24,7 @@ local signs = {
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
 -- Show icons in autocomplete
@@ -33,32 +33,31 @@ require('vim.lsp.protocol').CompletionItemKind = {
   '﬌ ', ' ', ' ', '', ' ', ' ', ' ', ' ', '', '', '<>'
 }
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = true,
-      -- virtual_text = { spacing = 5, severity_limit = 'Warning' },
-      update_in_insert = true,
-      signs = true,
-      source = 'if_many',
-      virtual_text = {
-        prefix = '',
-        format = function(diagnostic)
-          if diagnostic.severity == vim.diagnostic.severity.ERROR then
-            return string.format("%s %s", icons.lsp_signs.Error, diagnostic.message)
-          end
-          if diagnostic.severity == vim.diagnostic.severity.WARN then
-            return string.format("%s %s", icons.lsp_signs.Warning, diagnostic.message)
-          end
-          if diagnostic.severity == vim.diagnostic.severity.INFO then
-            return string.format("%s %s", icons.lsp_signs.Information, diagnostic.message)
-          end
-          if diagnostic.severity == vim.diagnostic.severity.HINT then
-            return string.format("%s %s", icons.lsp_signs.Hint, diagnostic.message)
-          end
-          return diagnostic.message
-        end
-      }
-    })
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  underline = true,
+  -- virtual_text = { spacing = 5, severity_limit = 'Warning' },
+  update_in_insert = true,
+  signs = true,
+  source = 'if_many',
+  virtual_text = {
+    prefix = '',
+    format = function(diagnostic)
+      if diagnostic.severity == vim.diagnostic.severity.ERROR then
+        return string.format("%s %s", icons.lsp_signs.Error, diagnostic.message)
+      end
+      if diagnostic.severity == vim.diagnostic.severity.WARN then
+        return string.format("%s %s", icons.lsp_signs.Warning, diagnostic.message)
+      end
+      if diagnostic.severity == vim.diagnostic.severity.INFO then
+        return string.format("%s %s", icons.lsp_signs.Information, diagnostic.message)
+      end
+      if diagnostic.severity == vim.diagnostic.severity.HINT then
+        return string.format("%s %s", icons.lsp_signs.Hint, diagnostic.message)
+      end
+      return diagnostic.message
+    end
+  }
+})
 
 -- vim.lsp.handlers['textDocument/definition'] = function(_, method, result)
 --   if result == nil or vim.tbl_isempty(result) then
