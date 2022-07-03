@@ -77,7 +77,7 @@ local mappings = {
     c = { "<cmd>:lua require'dap'.continue()<cr>", "Continue debug" },
     o = { "<cmd>:lua require'dap'.step_over()<cr>", "Step over" },
     i = { "<cmd>:lua require'dap'.step_into()<cr>", "Step into" },
-    t = {"<cmd>:lua require('dapui').toggle()<cr>", "Toggle ui"}
+    t = { "<cmd>:lua require('dapui').toggle()<cr>", "Toggle ui" }
   },
   D = { ":Dashboard<cr>", "Dashboard" },
   t = {
