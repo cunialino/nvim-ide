@@ -87,6 +87,7 @@ local mappings = {
     l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
     w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
     d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" }
+  P = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
   }
 }
 mappings["/"] = { ":CommentToggle<cr>", "Toggle Comment" }

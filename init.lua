@@ -104,5 +104,13 @@ require("packer").startup(function()
     config = "require('dapui').setup()"
   }
   use { "tpope/vim-fugitive" }
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" }
+  })
 end)
 vim.cmd 'colorscheme nord'
