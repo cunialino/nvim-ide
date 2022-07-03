@@ -87,7 +87,19 @@ local mappings = {
     l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
     w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
     d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" }
+  },
   P = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
+  u = {
+    name = "Utils",
+    t = { "<cmd>ToggleTerm<cr>", "Toggle term" },
+    f = {
+      "<cmd>lua require('toggleterm.terminal').Terminal:new({direction = 'float'}):toggle()<cr>",
+      "Toggle float"
+    },
+    l = {
+      "<cmd>lua require('toggleterm.terminal').Terminal:new({cmd='lazygit', direction = 'float'}):toggle()<cr>",
+      "Toggle lazygit"
+    }
   }
 }
 mappings["/"] = { ":CommentToggle<cr>", "Toggle Comment" }
