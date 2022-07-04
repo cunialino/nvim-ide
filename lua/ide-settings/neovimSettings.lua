@@ -55,6 +55,3 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins = 1
-
--- Vsnip dir
-vim.g.vsnip_snippet_dir = "~/.config/nvim/.vsnip/"
