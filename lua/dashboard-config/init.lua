@@ -1,19 +1,26 @@
-vim.g.dashboard_custom_header = {
-  [[__     __                           _   _       _           ]],
-  [[\ \   / /_ _ _ __   ___  _   _ _ __| \ | |_   _(_)_ __ ___  ]],
-  [[ \ \ / / _` | '_ \ / _ \| | | | '__|  \| \ \ / / | '_ ` _ \ ]],
-  [[  \ V / (_| | |_) | (_) | |_| | |  | |\  |\ V /| | | | | | |]],
-  [[   \_/ \__,_| .__/ \___/ \__,_|_|  |_| \_| \_/ |_|_| |_| |_|]],
-  [[            |_|                                             ]]
-}
+local db = require('dashboard')
+local home = os.getenv('HOME')
+db.preview_command = 'cat | lolcat -F 0.3'
+db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
+db.preview_file_height = 16
+db.preview_file_width = 26
 
-vim.g.dashboard_default_executive = 'telescope'
+-- vim.g.dashboard_default_executive = 'telescope'
 
-vim.g.dashboard_custom_section = {
-  a = { description = { '  Find File          ' }, command = 'Telescope find_files' },
-  d = { description = { '  Search Text        ' }, command = 'Telescope live_grep' },
-  b = { description = { '  Recent Files       ' }, command = 'Telescope oldfiles' },
-  e = { description = { '  Config             ' }, command = 'edit ~/.config/nvim/init.lua' },
-  f = { description = { '  Git                ' }, command = 'LazyGit' }
+db.custom_center = {
+  { icon = '   ', desc = 'Find File      ', shortcut = 'SPC f f', action = 'Telescope find_files' },
+  { icon = '   ', desc = 'Search Text    ', shortcut = 'SPC f r', action = 'Telescope live_grep' },
+  { icon = '   ', desc = 'Recent Files   ', shortcut = 'SPC f o', action = 'Telescope oldfiles' },
+  {
+    icon = '   ',
+    desc = 'Config           ',
+    shortcut = 'SPC c',
+    action = 'edit ~/.config/nvim/init.lua'
+  }, {
+    icon = '   ',
+    desc = 'Git            ',
+    shortcut = 'SPC u l',
+    action = 'lua require("toggleterm.terminal").Terminal:new({cmd="lazygit", direction = "float"}):toggle()'
+  }
 }
-vim.g.dashboard_custom_footer = { 'Do one thing, do it well - Unix philosophy' }
+db.custom_footer = { 'Do one thing, do it well - Unix philosophy' }

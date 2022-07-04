@@ -12,7 +12,7 @@ require("packer").startup(function()
     event = 'BufRead'
   }
   use { 'tamton-aquib/staline.nvim', config = "require'staline-config'", event = 'BufRead' }
-  use { 'glepnir/dashboard-nvim', config = "require'dashboard-config'", event = 'BufWinEnter' }
+  use { 'glepnir/dashboard-nvim', config = "require('dashboard-config')" }
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = "require'blankline-config'",
