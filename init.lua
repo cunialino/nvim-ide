@@ -56,7 +56,7 @@ require("packer").startup(function()
   use { 'hrsh7th/cmp-buffer', after = "nvim-cmp" }
   use { 'hrsh7th/cmp-path', after = "nvim-cmp" }
   use { 'hrsh7th/cmp-vsnip', after = "nvim-cmp" }
-  use { 'hrsh7th/vim-vsnip', after = "nvim-cmp" }
+  use { 'hrsh7th/vim-vsnip', after = "nvim-cmp", config = "require('vsnip-config')" }
   use { 'hrsh7th/vim-vsnip-integ', after = "nvim-cmp" }
   use { "rafamadriz/friendly-snippets" }
   use { "b0o/schemastore.nvim", after = 'nvim-lsp-installer' }
@@ -107,9 +107,7 @@ require("packer").startup(function()
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
-    setup = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
+    config = "require('markdown-prev-config')",
     ft = { "markdown" }
   })
 end)
