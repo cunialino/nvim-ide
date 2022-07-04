@@ -9,5 +9,14 @@
       "</p>"
     ],
     "description": "Insert image with align"
+  },
+  "Line break": {
+    "prefix": [
+      "newline"
+    ],
+    "body": [
+      "<br/>"
+    ],
+    "description": "Force new line"
   }
 }
