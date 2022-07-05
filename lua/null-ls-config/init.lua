@@ -5,13 +5,9 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
     formatting.prettier, formatting.black, formatting.gofmt, formatting.shfmt,
-    formatting.clang_format, formatting.cmake_format, formatting.lua_format.with({
-      extra_args = {
-        '--no-keep-simple-function-one-line', '--no-break-after-operator', '--column-limit=100',
-        '--break-after-table-lb', '--indent-width=2'
-      }
-    }), formatting.isort, formatting.codespell.with({filetypes = {'markdown'}}),
-    formatting.phpcsfixer.with({command = './tools/php-cs-fixer/vendor/bin/php-cs-fixer'}),
+    formatting.clang_format, formatting.cmake_format, formatting.isort,
+    formatting.codespell.with({ filetypes = { 'markdown' } }),
+    formatting.phpcsfixer.with({ command = './tools/php-cs-fixer/vendor/bin/php-cs-fixer' }),
     formatting.shellharden
   },
   on_attach = function(client)
@@ -24,7 +20,7 @@ null_ls.setup({
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]], false)
+    ]]   , false)
       end
     end
   end

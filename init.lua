@@ -43,7 +43,7 @@ require("packer").startup(function()
 
   -- LSP and Autocomplete
   use { 'williamboman/nvim-lsp-installer' }
-  use { 'neovim/nvim-lspconfig', event = "BufRead", config = "require'language-servers'" }
+  use { 'neovim/nvim-lspconfig', config = "require'language-servers'" }
   use { 'onsails/lspkind-nvim' }
   use {
     'hrsh7th/nvim-cmp',
