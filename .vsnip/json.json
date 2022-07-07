@@ -7,9 +7,9 @@
       "\"$1\": {",
       "\t\"prefix\":[\"$2\"],",
       "\t\"body\":[",
-      "\t\t\"$3\"",
+      "\t\t\"$4\"",
       "\t],",
-      "\t\"description\":\"$4\"",
+      "\t\"description\":\"$3\"",
       "}"
     ],
     "description": "Class definition template."
