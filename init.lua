@@ -116,5 +116,9 @@ packer.startup(function()
   use({ "hrsh7th/vim-vsnip", after = "nvim-cmp", config = "require('vsnip-config')" })
   use({ "hrsh7th/vim-vsnip-integ", after = "nvim-cmp" })
   use({ "rafamadriz/friendly-snippets" })
+
+  -- DB plugins
+  use({ "tpope/vim-dadbod" })
+  use({ "kristijanhusak/vim-dadbod-ui" })
 end)
 vim.cmd("colorscheme nord")
