@@ -1,7 +1,11 @@
 require("ide-settings")
 require("ide-settings/neovimSettings")
 require("ide-settings/keybindings")
-require("packer").startup(function()
+local packer = require("packer")
+packer.init({
+	snapshot_path = "~/.config/nvim/.snapshots", -- Default save directory for snapshots
+})
+packer.startup(function()
 	use("wbthomason/packer.nvim")
 	-- Syntax Highlighting and Visual Plugins
 	use({ "norcalli/nvim-colorizer.lua", config = "require'colorizer-config'", event = "BufRead" })
