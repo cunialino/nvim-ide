@@ -65,9 +65,13 @@ ide_settings = {
   }
 }
 
-Utils = {
-  saveAndExit = function ()
-    vim.cmd("SessionSave")
-    vim.cmd("q")
-  end
+UtilityFunctions = {
+	saveAndExit = function()
+		vim.cmd("SessionSave")
+		vim.cmd("q")
+	end,
+	syncPlugins = function()
+		vim.cmd("PackerSnapshot backup")
+		vim.cmd("PackerSync")
+	end,
 }
