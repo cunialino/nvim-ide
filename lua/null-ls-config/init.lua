@@ -4,7 +4,7 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
-    formatting.prettier, formatting.black, formatting.gofmt, formatting.shfmt,
+    formatting.prettier, formatting.black, formatting.gofmt, formatting.shfmt, formatting.stylua,
     formatting.clang_format, formatting.cmake_format, formatting.isort,
     formatting.codespell.with({ filetypes = { 'markdown' } }),
     formatting.phpcsfixer.with({ command = './tools/php-cs-fixer/vendor/bin/php-cs-fixer' }),
