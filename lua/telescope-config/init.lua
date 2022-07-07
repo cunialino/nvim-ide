@@ -41,12 +41,14 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default + actions.center,
-        ["<C-q>"] = trouble.open_with_trouble
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+        ["<C-t>"] = trouble.open_with_trouble
       },
       n = {
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-        ["<C-q>"] = trouble.open_with_trouble
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+        ["<C-t>"] = trouble.open_with_trouble
       }
     },
     extensions = {
