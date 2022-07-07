@@ -26,7 +26,7 @@ local mappings = {
   },
   x = { ":bdelete<cr>", "Close Buffer" },
   X = { ":bdelete!<cr>", "Force Close Buffer" },
-  q = { ":q<cr>", "Quit" },
+  q = { ":lua Utils.saveAndExit()<cr>", "Quit" },
   Q = { ":q!<cr>", "Force Quit" },
   w = { ":w<cr>", "Write" },
   E = { ":e ~/.config/nvim/lua/vapour/user-config/init.lua<cr>", "Edit User Config" },

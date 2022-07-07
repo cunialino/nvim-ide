@@ -62,3 +62,10 @@ ide_settings = {
     -- }
   }
 }
+
+Utils = {
+  saveAndExit = function ()
+    vim.cmd("SessionSave")
+    vim.cmd("q")
+  end
+}
