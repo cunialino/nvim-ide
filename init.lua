@@ -118,7 +118,14 @@ packer.startup(function()
   use({ "rafamadriz/friendly-snippets" })
 
   -- DB plugins
-  use({ "tpope/vim-dadbod" })
-  use({ "kristijanhusak/vim-dadbod-ui" })
+  use({
+    "tpope/vim-dadbod",
+    requires = {
+      "kristijanhusak/vim-dadbod-ui",
+    },
+    setup = function()
+      vim.g.db_ui_save_location = "~/.config/db_ui"
+    end,
+  })
 end)
 vim.cmd("colorscheme nord")
