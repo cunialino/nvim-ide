@@ -95,7 +95,7 @@ local mappings = {
     w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
     d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
   },
-  P = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
+  P = { ":lua UtilityFunctions.preview()<cr>", "Quit" },
   u = {
     name = "Utils",
     t = { "<cmd>ToggleTerm<cr>", "Toggle term" },
@@ -108,6 +108,22 @@ local mappings = {
       "Toggle lazygit",
     },
   },
+  S = {
+    name = "Hop search",
+    f = {
+      "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>",
+      "Char forward",
+    },
+    F = {
+      "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>",
+      "Char backward",
+    },
+    s = {
+      "<cmd>lua require'hop'.hint_patterns()<cr>",
+      "Pattern search",
+    },
+  },
+  o = { ":only<cr>", "Only" },
 }
 mappings["/"] = { ":CommentToggle<cr>", "Toggle Comment" }
 

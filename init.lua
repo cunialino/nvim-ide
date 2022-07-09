@@ -127,5 +127,14 @@ packer.startup(function()
       vim.g.db_ui_save_location = "~/.config/db_ui"
     end,
   })
+  use({
+    "phaazon/hop.nvim",
+    branch = "v2", -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require("hop").setup()
+    end,
+  })
+  use({ "emakman/neovim-latex-previewer" })
 end)
 vim.cmd("colorscheme nord")
