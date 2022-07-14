@@ -136,5 +136,6 @@ packer.startup(function()
     end,
   })
   use({ "emakman/neovim-latex-previewer" })
+  use({ "wakatime/vim-wakatime" })
 end)
 vim.cmd("colorscheme nord")
